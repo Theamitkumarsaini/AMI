@@ -1,6 +1,6 @@
-api_id = 29410389
-api_hash = "0c716764715886f6641477ffbb63e1ee"
-bot_token = "6891181230:AAExgbCfEqc-p9sC54_4rjQtwuw1Q1ya0h8"
-sudo_groups = -1001999673737
-sudo_user = 6899244704,5442868227
+api_id = 20544260
+api_hash = "a0b00461d3fba22aa186fa648d77787e"
+bot_token = "6940355682:AAEaTbv9tLz7ZKOEcMJ1HBioIP2goQOdQSY"
+sudo_groups = -4095451971
+sudo_user = 6389388334
 
