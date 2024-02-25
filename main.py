@@ -40,8 +40,8 @@ bot = Client(
     api_id=os.environ.get("API_ID"),
     api_hash=os.environ.get("API_HASH")
 )
-auth_users = [ int(chat) for chat in os.environ.get("AUTH_USERS").split(",")  if chat != '-1002117596251']
-sudo_users = auth_users
+# auth_users = [ int(chat) for chat in os.environ.get("AUTH_USERS").split(",")  if chat != '-1002117596251']
+# sudo_users = auth_users
 sudo_groups = [ int(chat) for chat in os.environ.get("GROUPS").split(",")  if chat != '']
 
 @bot.on_message(filters.command(["start"])&  (filters.chat(sudo_groups)))
