@@ -25,43 +25,29 @@ from pyrogram.types import User, Message
 import sys
 import re
 import os
-# import pycurl
 
+bot = Client("bot",
+             bot_token= "6940355682:AAEaTbv9tLz7ZKOEcMJ1HBioIP2goQOdQSY",
+             api_id= 20544260,
+             api_hash= "a0b00461d3fba22aa186fa648d77787e")
 
-# bot = Client(
-#     "bot",
-#     api_id=api_id,
-#     api_hash=api_hash,
-#     bot_token=bot_token)
-
-bot = Client(
-    "bot",
-    bot_token=os.environ.get("BOT_TOKEN"),
-    api_id=os.environ.get("API_ID"),
-    api_hash=os.environ.get("API_HASH")
-)
- auth_users = [ int(chat) for chat in os.environ.get("AUTH_USERS").split(",")  if chat != '-1002117596251']
- sudo_users = auth_users
- sudo_groups = [ int(chat) for chat in os.environ.get("GROUPS").split(",")  if chat != '']
-
-@bot.on_message(filters.command(["start"])&  (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["start"]) & filters.chat(ADMINS))
 async def account_login(bot: Client, m: Message):
-    
-    editable = await m.reply_text("Hi\nPress /pyro")
+    editable = await m.reply_text(f"Hello 👋 **Hello I Am Txt to video downloader bot**.\n\n**Developer** : PROFESSOR  \n**Language** : Python program \n**Framework** : Pyrogram\n\nTXT - **To download from TXT file.**")
 
-@bot.on_message(filters.command(["cancel"])&  (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["cancel"])&  (filters.chat(ADMINS)))
 async def cancel(_, m):
     editable = await m.reply_text("Canceling All process Plz wait")
     global cancel
     cancel = True
     await editable.edit("cancled")
     return
-@bot.on_message(filters.command("restart")&   (filters.chat(sudo_groups)))
+@bot.on_message(filters.command("restart")&   (filters.chat(ADMINS)))
 async def restart_handler(_, m):
     await m.reply_text("Restarted!", True)
     os.execl(sys.executable, sys.executable, *sys.argv)
 
-@bot.on_message(filters.command(["pyro"])&   (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["pyro"])&   (filters.chat(ADMINS)))
 async def account_login(bot: Client, m: Message):
     
     editable = await m.reply_text("Send txt file**")
@@ -375,7 +361,7 @@ async def account_login(bot: Client, m: Message):
     await m.reply_text("Done")    
     
     
-@bot.on_message(filters.command(["top"])&   (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["top"])&   (filters.chat(ADMINS)))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text(f"**Hi im Topranker dl**")
     input: Message = await bot.listen(editable.chat.id)
@@ -572,7 +558,7 @@ async def adda_pdf(bot: Client, m: Message):
     await m.reply_text("Done")
     
     
-@bot.on_message(filters.command(["jw"])&   (filters.chat(sudo_groups)))
+@bot.on_message(filters.command(["jw"])&   (filters.chat(ADMINS)))
 async def account_login(bot: Client, m: Message):
     editable = await m.reply_text("Send txt file**")
     input: Message = await bot.listen(editable.chat.id)
